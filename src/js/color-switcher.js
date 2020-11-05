@@ -21,7 +21,7 @@ const refs = {
 
  
 function switchColor() {
-    refs.body.style.backgroundColor = colors[randomIntegerFromInterval(0, 5)];
+    refs.body.style.backgroundColor = colors[randomIntegerFromInterval(0, colors.length - 1)];
 }
 
 function startSwitchColor() {
