@@ -19,23 +19,18 @@ const refs = {
     body: document.querySelector('body'),
 }
 
-
-function selectColor(colorsArr) {
-    const rundomIndex = randomIntegerFromInterval(0, 5);
-    refs.body.style.backgroundColor = colorsArr[rundomIndex]
  
-}
- 
-
 function switchColor() {
-    intervalId = setInterval(() => {
-    let rundomIndex = randomIntegerFromInterval(0, 5);
-    refs.body.style.backgroundColor = colors[rundomIndex];
+    refs.body.style.backgroundColor = colors[randomIntegerFromInterval(0, 5)];
+}
+
+function startSwitchColor() {
+  switchColor();
+  
+  intervalId = setInterval(switchColor, 1000);
+  
+  refs.startBtn.setAttribute('disabled', true)
     
-   
-    }, 1000);
-    refs.startBtn.setAttribute('disabled', true)
-    return intervalId;
 }
 
 
@@ -45,5 +40,5 @@ function stopSwitchColor() {
 }
 
     
-refs.startBtn.addEventListener('click', switchColor)
+refs.startBtn.addEventListener('click', startSwitchColor)
 refs.stopBtn.addEventListener('click', stopSwitchColor)

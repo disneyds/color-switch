@@ -13,3 +13,31 @@ body {
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
+
+button {
+  margin: 15px;
+  min-width: 200px;
+  min-height: 40px;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+button:hover {
+  box-shadow: 2px 2px 4px 0px slategray;
+}
+
+.box {
+  height: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[data-action='start'] {
+  background-color: green;
+}
+[data-action='start']:disabled {
+  background-color: silver;
+}
+[data-action='stop'] {
+  background-color: red;
+}
